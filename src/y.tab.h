@@ -49,9 +49,9 @@ extern int yydebug;
     FECHA = 259,
     MUNICIPIO = 260,
     BARRA = 261,
-    NOME = 262,
-    NUMEROV = 263,
-    EOL = 264
+    NUMEROV = 262,
+    EOL = 263,
+    NOME = 264
   };
 #endif
 /* Tokens.  */
@@ -59,9 +59,9 @@ extern int yydebug;
 #define FECHA 259
 #define MUNICIPIO 260
 #define BARRA 261
-#define NOME 262
-#define NUMEROV 263
-#define EOL 264
+#define NUMEROV 262
+#define EOL 263
+#define NOME 264
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

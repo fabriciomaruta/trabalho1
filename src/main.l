@@ -4,7 +4,7 @@
 void yyerror(char *);
 
 #include "y.tab.h"
-  int a = 0;
+
 
 %}
 PALAVRA {NUMEROV PALAVRAV}+;
@@ -20,10 +20,11 @@ PALAVRA {NUMEROV PALAVRAV}+;
 "/" {
   return BARRA;
 }
-[a-zA-Z]+ {
+[a-zA-Z\" "]+ {
   strcpy(yylval.s,yytext);
   return NOME;
 }
+
 [0-9]+ {
 
 return NUMEROV;
