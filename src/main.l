@@ -14,7 +14,7 @@ PALAVRA {NUMEROV PALAVRAV}+;
 ">" { return FECHA; }
 
 
-(Bairro) {
+(***) {
   return MUNICIPIO;
 }
 "/" {
@@ -33,7 +33,9 @@ return NUMEROV;
   return EOL;
 }
 
-. { }
+. {
+  return PVAL;
+} ;
 
 %%
 

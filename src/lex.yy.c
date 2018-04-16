@@ -793,14 +793,16 @@ YY_RULE_SETUP
 case 8:
 YY_RULE_SETUP
 #line 36 "src/main.l"
-{ }
+{
+  return PVAL;;
+} ;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 38 "src/main.l"
+#line 40 "src/main.l"
 ECHO;
 	YY_BREAK
-#line 804 "src/lex.yy.c"
+#line 806 "src/lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1801,7 +1803,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 38 "src/main.l"
+#line 40 "src/main.l"
 
 
 

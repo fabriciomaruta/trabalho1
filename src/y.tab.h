@@ -52,7 +52,8 @@ extern int yydebug;
     NUMEROV = 262,
     EOL = 263,
     NOTHING = 264,
-    NOME = 265
+    PVAL = 265,
+    NOME = 266
   };
 #endif
 /* Tokens.  */
@@ -63,7 +64,8 @@ extern int yydebug;
 #define NUMEROV 262
 #define EOL 263
 #define NOTHING 264
-#define NOME 265
+#define PVAL 265
+#define NOME 266
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -75,7 +77,7 @@ union YYSTYPE
   char s[61];
   int num;
 
-#line 79 "src/y.tab.h" /* yacc.c:1909  */
+#line 81 "src/y.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
