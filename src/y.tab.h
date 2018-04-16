@@ -51,7 +51,8 @@ extern int yydebug;
     BARRA = 261,
     NUMEROV = 262,
     EOL = 263,
-    NOME = 264
+    NOTHING = 264,
+    NOME = 265
   };
 #endif
 /* Tokens.  */
@@ -61,7 +62,8 @@ extern int yydebug;
 #define BARRA 261
 #define NUMEROV 262
 #define EOL 263
-#define NOME 264
+#define NOTHING 264
+#define NOME 265
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -73,7 +75,7 @@ union YYSTYPE
   char s[61];
   int num;
 
-#line 77 "src/y.tab.h" /* yacc.c:1909  */
+#line 79 "src/y.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

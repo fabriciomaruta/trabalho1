@@ -11,7 +11,7 @@ int yylex(void);
   char s[61];
   int num;
 }
-%token ABRE FECHA MUNICIPIO BARRA  NUMEROV EOL
+%token ABRE FECHA MUNICIPIO BARRA  NUMEROV EOL NOTHING
 %token <s> NOME
 
 %%
@@ -22,8 +22,8 @@ PROGRAMA EXPRESSAO EOL{
 EXPRESSAO:
 ABRE MUNICIPIO FECHA NOME ABRE BARRA MUNICIPIO FECHA {
   printf("%s", $4);
-}|NOME{
 }|;
+
 
 
 %%

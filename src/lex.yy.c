@@ -464,7 +464,7 @@ char *yytext;
 void yyerror(char *);
 
 #include "y.tab.h"
-  int a = 0;
+
 
 #line 470 "src/lex.yy.c"
 
@@ -779,29 +779,28 @@ case 6:
 YY_RULE_SETUP
 #line 28 "src/main.l"
 {
-
 return NUMEROV;
 }
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 33 "src/main.l"
+#line 32 "src/main.l"
 {
   return EOL;
 }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 37 "src/main.l"
+#line 36 "src/main.l"
 { }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 39 "src/main.l"
+#line 38 "src/main.l"
 ECHO;
 	YY_BREAK
-#line 805 "src/lex.yy.c"
+#line 804 "src/lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1802,7 +1801,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 39 "src/main.l"
+#line 38 "src/main.l"
 
 
 

@@ -26,7 +26,6 @@ PALAVRA {NUMEROV PALAVRAV}+;
 }
 
 [0-9]+ {
-
 return NUMEROV;
 }
 
