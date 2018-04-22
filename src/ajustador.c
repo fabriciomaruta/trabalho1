@@ -3,15 +3,23 @@
 #include<string.h>
 
 int main(){
-  char s[20];
+  char s[50];
   FILE *f;
-  f = fopen("main.l", "r+");
+  FILE *fin;
+  f = fopen("model.txt", "r+");
+  fin = fopen("main.l", "w");
+  fpos_t posi;
   /*Opera no arquivo*/
-  for(int i = 0; fscanf(f,"%s", &s) != EOF;i++){
-    if(strcmp(s,"(***)") == 0){
-      printf("achei");
+
+  while(fgets(s,50, f)){
+
+    if(strcmp(s,"(***) {\n") == 0){
+      strcpy(s,"(Prestador2) {");
       /*Chama funcao pra trocar *** pela palavra desejada*/
     }
+    fprintf(fin, "\n");
+    fprintf(fin,"%s",s);
   }
   fclose(f);
+  fclose(fin);
 }
