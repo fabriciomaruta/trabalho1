@@ -37,7 +37,7 @@ PALAVRA {NUMEROV PALAVRAV}+;
 
 
 
-["/""?"\.\=\"\" "\:\s]+ {
+["/" "?" ":" "|" "\" "º" "\t" "\n" " " "." \"-" "=" """ "%" "$" "Ã" "Á" ","]+ {
 
   return BARRA;
 
@@ -67,6 +67,9 @@ return NUMEROV;
 
 }
 
+[\0]+ {
+  return FIM;
+}
 
 
 [.]+ {
