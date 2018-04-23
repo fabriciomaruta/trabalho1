@@ -13,7 +13,7 @@ int yylex(void);
   char s[61];
   int num;
 }
-%token ABRE FECHA MUNICIPIO MUNICIPIO2 BARRA  NUMEROV EOL NOTHING PVAL
+%token ABRE FECHA MUNICIPIO  BARRA  NUMEROV EOL PVAL
 %token <s> NOME
 
 %%
@@ -24,9 +24,20 @@ PROGRAMA EXPRESSAO EOL{
 EXPRESSAO:
 ABRE MUNICIPIO FECHA NOME ABRE BARRA MUNICIPIO FECHA {
   buscanome($4);
-}| ABRE MUNICIPIO2 FECHA NOME ABRE BARRA MUNICIPIO2 FECHA {
-  buscanome($4);
-};
+}| ABRE NOME FECHA NOME ABRE BARRA NOME FECHA{
+  printf("cruzes\n");
+}| ABRE BARRA NOME FECHA NOME ABRE BARRA NOME FECHA{
+  printf("ai caraio\n");
+}| ABRE EXPRESSAO FECHA{
+
+}|NOME EXPRESSAO{
+
+}|BARRA EXPRESSAO{
+
+}|EXPRESSAO ABRE EXPRESSAO FECHA EXPRESSAO{
+
+}|;
+
 
 
 
@@ -34,18 +45,23 @@ ABRE MUNICIPIO FECHA NOME ABRE BARRA MUNICIPIO FECHA {
 void buscanome(char *s){
   FILE *fp;
   char st[15];
+  char p = 48;
   fp = fopen("CodigosMunicipios", "r");
   while((fscanf(fp,"%s",st)) != EOF){
     if(strcmp(st,s) == 0){
       break;
     }
   }
-  fscanf(fp, "%s",s);
-  printf("%s\n", s);
+  while(p != '\n'){
+    fscanf(fp, "%c",&p);
+    printf("%c", p);
+  }
+  printf("\n");
+  fclose(fp);
 }
 
 void yyerror(char *s) {
-  printf("aqui\n");
+  printf("CARACTERE INVALIDO %s\n",s);
 }
 
 int main() {

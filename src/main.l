@@ -21,15 +21,11 @@ PALAVRA {NUMEROV PALAVRAV}+;
 
 %%
 
-(CodigoMunicipio) {
+(CodigoMunicipio|ns3:CodigoMunicipio) {
   return MUNICIPIO;
-
 }
 
-(ns3:CodigoMunicipio) {
-  return MUNICIPIO2;
 
-}
 
 
 
@@ -41,9 +37,7 @@ PALAVRA {NUMEROV PALAVRAV}+;
 
 
 
-
-
-"/" {
+["/""?"\.\=\"\" "\:\s]+ {
 
   return BARRA;
 
@@ -75,7 +69,7 @@ return NUMEROV;
 
 
 
-. {
+[.]+ {
 
   return PVAL;
 
