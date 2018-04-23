@@ -21,8 +21,13 @@ PALAVRA {NUMEROV PALAVRAV}+;
 
 %%
 
-(Prestador2) {
+(CodigoMunicipio) {
   return MUNICIPIO;
+
+}
+
+(ns3:CodigoMunicipio) {
+  return MUNICIPIO2;
 
 }
 
@@ -44,7 +49,7 @@ PALAVRA {NUMEROV PALAVRAV}+;
 
 }
 
-[a-zA-Z\" "]+ {
+[a-zA-Z\" "0-9]+ {
 
   strcpy(yylval.s,yytext);
 

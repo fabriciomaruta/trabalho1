@@ -48,36 +48,38 @@ extern int yydebug;
     ABRE = 258,
     FECHA = 259,
     MUNICIPIO = 260,
-    BARRA = 261,
-    NUMEROV = 262,
-    EOL = 263,
-    NOTHING = 264,
-    PVAL = 265,
-    NOME = 266
+    MUNICIPIO2 = 261,
+    BARRA = 262,
+    NUMEROV = 263,
+    EOL = 264,
+    NOTHING = 265,
+    PVAL = 266,
+    NOME = 267
   };
 #endif
 /* Tokens.  */
 #define ABRE 258
 #define FECHA 259
 #define MUNICIPIO 260
-#define BARRA 261
-#define NUMEROV 262
-#define EOL 263
-#define NOTHING 264
-#define PVAL 265
-#define NOME 266
+#define MUNICIPIO2 261
+#define BARRA 262
+#define NUMEROV 263
+#define EOL 264
+#define NOTHING 265
+#define PVAL 266
+#define NOME 267
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 
 union YYSTYPE
 {
-#line 10 "src/main.y" /* yacc.c:1909  */
+#line 12 "src/main.y" /* yacc.c:1909  */
 
   char s[61];
   int num;
 
-#line 81 "src/y.tab.h" /* yacc.c:1909  */
+#line 83 "src/y.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
