@@ -28,6 +28,7 @@ EXTENSIONS = *.c *.h *.in *.out *.sh
 .PHONY: depend clean
 
 all:$(TARGET) 
+	
 
 $(TARGET):$(LEXOUT) $(YYTABC)
 	$(CC) -o$(TARGET) $(LEXOUT) $(YYTABC) $(CFLAGS)
@@ -43,7 +44,8 @@ test:all
 
 zip:clean
 	$(ZIP) -R $(ZIPFILE)  Makefile $(EXTENSIONS)
-
+clear:
+	rm saida.csv
 
 clean:
 	$(RM) $(YYTABC)

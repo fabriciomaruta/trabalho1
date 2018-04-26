@@ -15,7 +15,6 @@ void yyerror(char *);
 
 %}
 
-PALAVRA {NUMEROV PALAVRAV}+;
 
 
 
@@ -31,37 +30,40 @@ PALAVRA {NUMEROV PALAVRAV}+;
   return PRESTADOR;
 }
 
-(ValorIss) {
+(PrestadorServico) {
+  return FLAGP;
+}
+
+(TomadorServico) {
+  return FLAGT;
+}
+
+(ValorIss|VALOR_ISS|valorTotalISS) {
   return ISS;
+}
+
+(valorTotalServico|VALOR_SERVICO|ValorServicos) {
+ return SERVICO;
 }
 
 "<" { return ABRE; }
 ">" { return FECHA; }
 
-["/" "?" ":" "|" "\" "º" "\t" "\n" " " "." \"-" "=" """ "%" "$" "Ã" "Á" "," "_""ï""¿""½" ";" "&" "Ó" "Í" "ã" "á"]+ {
+["Ç" "Í" "°" "/" "?" ":" "|" "\" "º" "–" "\t" "\n" " " "." \- "=" """ "%" "$" "Ã" "Á" "," \_ "ï""¿""½" ";" "&" "Ó" "ã" "á" "@" "(" ")" "À"]+ {
   return BARRA;
 }
 
-[a-zA-Z\" "0-9\"."]+ {
+
+[a-zA-Z\" "0-9\"."\_","]+ {
   strcpy(yylval.s,yytext);
   return NOME;
 }
 
-[0-9]+ {
-return NUMEROV;
-}
 
-[\n]+ {
+[\0]+ {
   return EOL;
 }
 
-[\0]+ {
-  return FIM;
-}
-
-[.]+ {
-  return PVAL;
-} ;
 
 %%
 int yywrap() {

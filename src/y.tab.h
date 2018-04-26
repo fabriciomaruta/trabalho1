@@ -53,7 +53,13 @@ extern int yydebug;
     EOL = 263,
     PVAL = 264,
     FIM = 265,
-    NOME = 266
+    PRESTADOR = 266,
+    TOMADOR = 267,
+    ISS = 268,
+    SERVICO = 269,
+    FLAGP = 270,
+    FLAGT = 271,
+    NOME = 272
   };
 #endif
 /* Tokens.  */
@@ -65,19 +71,25 @@ extern int yydebug;
 #define EOL 263
 #define PVAL 264
 #define FIM 265
-#define NOME 266
+#define PRESTADOR 266
+#define TOMADOR 267
+#define ISS 268
+#define SERVICO 269
+#define FLAGP 270
+#define FLAGT 271
+#define NOME 272
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 
 union YYSTYPE
 {
-#line 12 "src/main.y" /* yacc.c:1909  */
+#line 19 "src/main.y" /* yacc.c:1909  */
 
   char s[61];
   int num;
 
-#line 81 "src/y.tab.h" /* yacc.c:1909  */
+#line 93 "src/y.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
